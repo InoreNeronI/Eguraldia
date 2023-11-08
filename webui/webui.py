@@ -1,11 +1,10 @@
 from threading import Thread
 
-import PySide2.QtCore as core
-import PySide2.QtWidgets as core_widgets
-import PySide2.QtWebEngine as web_engine
-import PySide2.QtWebEngineWidgets as web_widgets
-import PySide2.QtGui as gui
-
+import PySide6.QtCore as core
+import PySide6.QtWidgets as core_widgets
+import PySide6.QtWebEngineWidgets as web_widgets
+import PySide6.QtGui as gui
+from PySide6.QtWebEngineCore import QWebEnginePage, QWebEngineSettings # new
 
 default_url = "127.0.0.1"
 
@@ -38,7 +37,7 @@ class WebUI(object):
         self.view.load(core.QUrl(self.url))
 
         change_setting = self.view.page().settings().setAttribute
-        settings = web_widgets.QWebEngineSettings
+        settings = QWebEngineSettings # new
         change_setting(settings.LocalStorageEnabled, True)
         change_setting(settings.PluginsEnabled, True)
 
@@ -58,7 +57,7 @@ class WebUI(object):
             pythoncom.CoInitialize()
         self.flask_app.run(debug=debug, host=host, port=port, use_reloader=False)
 
-class CustomWebEnginePage(web_widgets.QWebEnginePage):
+class CustomWebEnginePage(QWebEnginePage): # new
     def createWindow(self, _type):
         page = CustomWebEnginePage(self)
         page.urlChanged.connect(self.open_browser)
