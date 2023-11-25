@@ -14,7 +14,7 @@ except ImportError:
         from pip.req import parse_requirements
 from setuptools import setup
 
-requirements = parse_requirements(filename='requirements.txt', session=PipSession())
+requirements = parse_requirements(filename='requirements/prod.txt', session=PipSession())
 
 setup(
     name='WebUI',
