@@ -1,3 +1,4 @@
+from pathlib import Path
 # @see https://stackoverflow.com/a/57191701/16711967
 try:
     # pip >=20
@@ -14,7 +15,11 @@ except ImportError:
         from pip.req import parse_requirements
 from setuptools import setup
 
-requirements = parse_requirements(filename='requirements/prod.txt', session=PipSession())
+with Path('requirements/prod.txt').open() as requirements_txt:
+    requirements = [
+        str(requirement)
+        for requirement
+        in parse_requirements(filename=requirements_txt, session=PipSession())
 
 setup(
     name='WebUI',
@@ -31,6 +36,6 @@ setup(
     ],
     description='WebUI lets you create first class desktop applications in Python with HTML/CSS',
     long_description=open('README.md').read(),
-    install_requires=[str(requirement.requirement) for requirement in requirements],
+    install_requires=requirements,
     python_requires='>=3.8',
 )
