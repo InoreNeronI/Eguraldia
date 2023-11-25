@@ -1,7 +1,12 @@
+from pip.req import parse_requirements
 from setuptools import setup
 
-with open('requirements.txt') as f:
-    required = f.read().splitlines()
+# parse_requirements() returns generator of pip.req.InstallRequirement objects
+install_reqs = parse_requirements('requirements/prod.txt')
+
+# reqs is a list of requirement
+# e.g. ['django==1.5.1', 'mezzanine==1.4.6']
+reqs = [str(ir.req) for ir in install_reqs]
 
 setup(
     name='WebUI',
@@ -18,6 +23,6 @@ setup(
     ],
     description='WebUI lets you create first class desktop applications in Python with HTML/CSS',
     long_description=open('README.md').read(),
-    install_requires=required,
+    install_requires=reqs,
     python_requires='>=3.6',
 )
