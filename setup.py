@@ -1,5 +1,9 @@
-from pip.req import parse_requirements
 from setuptools import setup
+# @see https://stackoverflow.com/a/16624700/16711967
+try: # for pip >= 10
+    from pip._internal.req import parse_requirements
+except ImportError: # for pip <= 9.0.3
+    from pip.req import parse_requirements
 
 # parse_requirements() returns generator of pip.req.InstallRequirement objects
 install_reqs = parse_requirements('requirements/prod.txt')
