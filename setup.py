@@ -1,16 +1,13 @@
-from setuptools import setup
 # @see https://stackoverflow.com/a/16624700/16711967
-try: # for pip >= 10
-    from pip._internal.req import parse_requirements
-except ImportError: # for pip <= 9.0.3
-    from pip.req import parse_requirements
+from pathlib import Path
+from pkg_resources import parse_requirements
+from setuptools import setup
 
-# parse_requirements() returns generator of pip.req.InstallRequirement objects
-install_reqs = parse_requirements('requirements/prod.txt')
-
-# reqs is a list of requirement
-# e.g. ['django==1.5.1', 'mezzanine==1.4.6']
-reqs = [str(ir.req) for ir in install_reqs]
+with Path('requirements/prod.txt').open() as requirements_txt:
+    reqs = [
+        str(requirement)
+        for requirement
+        in parse_requirements(requirements_txt)]
 
 setup(
     name='WebUI',
