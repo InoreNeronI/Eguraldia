@@ -1,5 +1,4 @@
 # @see https://stackoverflow.com/a/57191701/16711967
-from os import path
 try:
     # pip >=20
     from pip._internal.network.session import PipSession
@@ -15,7 +14,7 @@ except ImportError:
         from pip.req import parse_requirements
 from setuptools import setup
 
-requirements = parse_requirements(path.join(path.dirname(__file__), 'requirements', 'prod.txt'), session=PipSession())
+requirements = parse_requirements(filename='requirements.txt', session=PipSession())
 
 setup(
     name='WebUI',
