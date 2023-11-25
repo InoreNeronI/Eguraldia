@@ -1,0 +1,7 @@
+{% extends '__home.html' %}
+
+{% from 'security/_macros.html' import render_field, render_field_errors, render_field_with_errors %}
+
+{% block content %}
+    <article class="main">{% block article %}{% endblock %}</article>
+{% endblock %}

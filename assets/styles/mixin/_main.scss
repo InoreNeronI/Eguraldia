@@ -1,0 +1,72 @@
+
+@import 'node_modules/breakpoint-sass/stylesheets/breakpoint';
+
+@mixin background-base {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin button-flat {
+    background: none;
+    border: none;
+    color: inherit;
+}
+
+@mixin button-transform {
+    &:focus, &:hover,
+    &.focus, &.hover {
+        transform: translate(0.125rem, 0.125rem);
+    }
+    &:active, &.active {
+        transform: translate(0.25rem, 0.25rem);
+    }
+}
+
+@mixin subtitle {
+    font-size: 0.85rem;
+    a {
+        color: inherit;
+        font-size: 0.85rem;
+    }
+}
+
+@mixin title {
+    font-size: 1.25rem;
+    line-height: 0.75;
+    margin: 0;
+    text-align: center;
+    a {
+        color: inherit;
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
+}
+
+// @see https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+h1 {
+    @include title;
+}
+
+h2,
+span {
+    @include subtitle;
+}

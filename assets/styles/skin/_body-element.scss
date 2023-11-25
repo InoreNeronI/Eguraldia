@@ -1,0 +1,49 @@
+
+/* @see https://github.com/kitze/twizzle/blob/master/src/styles/themes.js */
+
+@mixin body($color-primary, $color-secondary) {
+    color: $color-primary;
+    .wrap {
+        >header {
+            border-bottom: 1px solid $color-secondary;
+            .menu-wrapper {
+                .menu {
+                    border-bottom: 1px solid $color-secondary;
+                    border-left: 1px solid $color-secondary;
+                    &-on {
+                        color: $color-secondary;
+                        background: rgba($color-primary, 0.4);
+                        box-shadow: 0.5rem 0.5rem 1.25rem 0 rgba($color-secondary, 0.333);
+                    }
+                    div {
+                        border-bottom: 1px solid $color-secondary;
+                        a, i {
+                            @include button-transform;
+                            &:focus, &:hover,
+                            &.focus, &.hover {
+                                color: $color-primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >section {
+            @include form(0.4s, $color-primary, $color-secondary);
+            box-shadow: 0 0 1rem 0.2rem rgba($color-secondary, 0.666);
+        }
+        >footer {
+            border-top: 1px solid $color-secondary;
+            .languages {
+                .lang {
+                    color: $color-secondary;
+                    &.button {
+                        a {
+                            color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

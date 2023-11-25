@@ -5,12 +5,12 @@ with open('requirements.txt') as f:
 
 setup(
     name='WebUI',
-    version='0.2.1',
-    author='Nick Johnstone',
-    author_email='ncwjohnstone@gmail.com',
+    version='1.0.0',
+    author='Nick Johnstone, Martin Mozos',
+    author_email='ncwjohnstone@gmail.com, martinmozos@gmail.com',
     packages=['webui'],
-    scripts=['examples/test_app.py'],
-    url='https://github.com/Widdershin/WebUI/',
+    scripts=['src/main.py'],
+    url='https://github.com/InoreNeronI/Eguraldia',
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: MIT License",

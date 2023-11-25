@@ -1,0 +1,43 @@
+
+@mixin footer {
+    @include flex-center-row;
+    text-align: center;
+
+    a.material-icons,
+    i {
+        font-size: 4vh;
+    }
+
+    a.material-icons {
+        @include button-flat;
+        @include button-transform;
+        text-decoration: none;
+    }
+
+    .footer {
+        width: 100%;
+        a {
+            @include button-transform;
+            font-size: inherit;
+            i, span {
+                font-size: inherit;
+            }
+        }
+    }
+
+    .languages {
+        @include flex-center-row;
+        .lang {
+            &:first-child {
+                color: inherit !important;
+            }
+            margin-right: 0.5rem;
+            &.button {
+                @include button-transform;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

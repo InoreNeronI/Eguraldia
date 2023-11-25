@@ -1,0 +1,8 @@
+{
+    "presets": ["@babel/env"],
+    "plugins": [
+        "@babel/proposal-export-default-from",
+        ["@babel/proposal-decorators", { "legacy": true }],
+        ["@babel/transform-runtime", { "regenerator": true }]
+    ]
+}

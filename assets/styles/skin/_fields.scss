@@ -1,0 +1,122 @@
+
+// @see https://codepen.io/teroauralinna/pen/rZZGpe
+// @see https://codepen.io/chriscoyier/pen/iphrb
+// @see https://auralinna.blog/post/2018/how-to-create-material-design-like-form-text-fields
+
+@mixin label-active() {
+    font-size: 0.75rem;
+    transform: translateY(-0.875rem);
+}
+
+@mixin form($animation-duration, $color-primary, $color-secondary) {
+    form { // @see https://codepen.io/sdthornton/pen/wBZdXq
+        background: rgba($color-primary, 0.1);
+        box-shadow: 0 1px 3px rgba($color-primary, 0.12), 0 1px 2px rgba($color-primary, 0.24);
+        border-radius: 0.5rem;
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        &:hover {
+            box-shadow: 0 14px 28px rgba($color-primary, 0.25), 0 10px 10px rgba($color-primary, 0.22);
+        }
+    }
+    [type="button"].submit,
+    [type="reset"],
+    [type="submit"],
+    a.submit,
+    button.submit {
+        background: $color-primary;
+        border: 0;
+        box-shadow: 1px 0 rgba($color-secondary, 0.666), 0 1px rgba($color-primary, 0.666),
+        2px 1px rgba($color-secondary, 0.555), 1px 2px rgba($color-primary, 0.555),
+        3px 2px rgba($color-secondary, 0.444), 2px 3px rgba($color-primary, 0.444),
+        4px 3px rgba($color-secondary, 0.333), 3px 4px rgba($color-primary, 0.333),
+        5px 4px rgba($color-secondary, 0.222), 4px 5px rgba($color-primary, 0.222),
+        6px 5px rgba($color-secondary, 0.111), 5px 6px rgba($color-primary, 0.111);
+        color: $color-secondary;
+        &:hover, &:focus,
+        &.hover, &.focus {
+            box-shadow: 1px 0 rgba($color-secondary, 0.666), 0 1px rgba($color-primary, 0.666),
+            2px 1px rgba($color-secondary, 0.555), 1px 2px rgba($color-primary, 0.555),
+            3px 2px rgba($color-secondary, 0.444), 2px 3px rgba($color-primary, 0.444),
+            4px 3px rgba($color-secondary, 0.666), 3px 4px rgba($color-primary, 0.333);
+        }
+        &:active,
+        &.active {
+            box-shadow: 1px 0 rgba($color-secondary, 0.666), 0 1px rgba($color-primary, 0.666),
+            2px 1px rgba($color-secondary, 0.555), 1px 2px rgba($color-primary, 0.555);
+        }
+    }
+    .field {
+        &_control {
+            border-bottom: 1px solid $color-secondary;
+            &-is-active {
+                &:after {
+                    border-bottom: 2px solid $color-primary;
+                }
+                .field_label {
+                    //color: rgba($color-primary, 0.75);
+                    opacity: 0.65;
+                }
+            }
+            &:after {
+                transition: all $animation-duration;
+            }/*
+            &.places {
+                .algolia-places-nostyle {
+                    .ap-nostyle-dropdown-menu {
+                        background: $color-secondary;
+                    }
+                }
+            }*/
+            .field_label {
+                transition: all $animation-duration;
+            }
+        }
+        &_input[type="date"],
+        &_input[type="datetime-local"],
+        &_input[type="email"],
+        &_input[type="file"],
+        &_input[type="image"],
+        &_input[type="month"],
+        &_input[type="number"],
+        &_input[type="password"],
+        &_input[type="range"],
+        &_input[type="search"],
+        &_input[type="tel"],
+        &_input[type="text"],
+        &_input[type="time"],
+        &_input[type="url"],
+        &_input[type="week"] {
+            @include field-input($color-primary, $color-secondary);
+        }
+    }
+    .field_control textarea.field_input {
+        @include field-input($color-primary, $color-secondary);
+    }
+    .forecast-arrows,
+    .forecast-detail {
+        background: rgba($color-secondary, 0.5);
+    }
+}
+
+@mixin field-input($color-primary, $color-secondary) {
+    &:-webkit-autofill { /* @see https://stackoverflow.com/a/29350537 */
+        &:first-line { /* @see https://stackoverflow.com/a/60379185 */
+            font-family: $font_family;
+            font-size: $font_size;
+        }
+        -webkit-text-fill-color: $color-primary; // @see https://gist.github.com/JoeKeikun/72718f5faaf518304024#gistcomment-2175468
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    &::-webkit-input-placeholder, // @see https://coolestguidesontheplanet.com/styling-placeholder-text-input-fields-forms-css
+    &::-moz-placeholder,
+    &:-ms-input-placeholder {
+        color: rgba($color-primary, 0.5);
+    }
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    caret-color: $color-primary;
+    color: $color-primary;
+}

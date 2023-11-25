@@ -1,0 +1,50 @@
+{% extends 'security/base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@placekit/autocomplete-js@2.1.5/dist/placekit-autocomplete.min.css" />
+{% endblock %}
+
+{% block article %}
+    <div class="field_control places">
+        <label class="field_label" for="places">{{ _('Where are you going?') }}</label>
+        <div class="field">
+            <i class="icon-clear material-icons"></i>
+            <i class="icon-pin material-icons"></i>
+            <input class="field_input" id="places" placeholder="{{ _('Where are you going?') }}" type="text">
+        </div>
+    </div>
+    {% include 'partial/_forecast.html' %}
+    {% include 'partial/_map.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@placekit/autocomplete-js@2.1.5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@placekit/client-js@2.2.0"></script>
+    <script>window.language="{{ language }}";window.placekit_api_key="{{ placekit_api_key }}";window.now="{{ days.now }}";window.today="{{ days.today }}";window.tomorrow="{{ days.tomorrow }}";window.next="{{ days.next }}";window.texts={
+DENIED: "{{ _('You denied the request for Geolocation.') }}",
+HIGH_TIDE: "{{ _('High tide') }}",
+LOW_TIDE: "{{ _('Low tide') }}",
+MENU_CLOSE: "{{ _('Close menu') }}",
+MENU_OPEN: "{{ _('Open menu') }}",
+MAP_CITIES: "{{ _('Show city map') }}",
+MAP_CLEAR: "{{ _('Show initial map') }}",
+MAP_LOCATE: "{{ _('Show location map') }}",
+MOON_PHASE: "{{ _('Moon phase') }}",
+MOON_RISING: "{{ _('Moonrise') }}",
+MOON_SET: "{{ _('Moonset') }}",
+NO_DATA: "{{ _('We do not have this data yet, please try again later.') }}",
+OFF: "{{ _('Geolocation is unavailable.') }}",
+ON: "{{ _('Locating...') }}",
+SUN_RISING: "{{ _('Sunrise') }}",
+SUN_SET: "{{ _('Sunset') }}",
+TIMEOUT: "{{ _('The request to get user location timed out.') }}",
+UNAVAILABLE: "{{ _('Location information is unavailable.') }}",
+UNKNOWN: "{{ _('An unknown error occurred.') }}",
+VISIBILITY: "{{ _('Visibility') }}",
+WAVE_HEIGHT: "{{ _('Wave height') }}",
+WATER_TEMPERATURE: "{{ _('Water temperature') }}"}</script><script defer src="../scripts/pages/place.js" type="module"></script>
+{% endblock %}
+

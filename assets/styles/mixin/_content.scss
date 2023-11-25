@@ -1,0 +1,322 @@
+
+@mixin content {
+    article {
+        @include background-base;
+        @include flex-center-column;
+        height: 100%;
+        padding-top: $font_size;
+        &.error-404 {
+            background-image: url("../images/404.svg");
+        }
+        &.error-500 {
+            background-image: url("../images/500.svg");
+        }
+        &.main {
+            background-image: url("../images/sign_in.svg");
+            >.field_control {
+                .field {
+                    &_input {
+                        margin-top: 0;
+                    }
+                }
+            }
+            >.forecast {
+                height: 436px;
+                position: relative;
+                width: 437px;
+                >.forecast-arrows {
+                    @include flex-center-row;
+                    border-bottom-left-radius: 0.5rem;
+                    border-bottom-right-radius: 0.5rem;
+                    padding: 0.15rem;
+                    padding-top: 0.25rem;
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                    * {
+                        @include subtitle;
+                        color: inherit;
+                    }
+                    a {
+                        @include button-transform;
+                    }
+                    a, i {
+                        cursor: pointer;
+                        font-size: inherit;
+                    }
+                }
+                >.forecast-detail {
+                    border-top-left-radius: 0.5rem;
+                    border-top-right-radius: 0.5rem;
+                    padding: 0.15rem 0.25rem 0.25rem;
+                    text-align: center;
+                    width: 100%;
+                    .span {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        .leaflet-container {
+            border-radius: 0.5rem;
+            font: 0.85rem/1.15 $font_family_variation;
+            height: 50vh;
+            min-height: 436px;
+            z-index: 0;
+            .leaflet-popup-content-wrapper {
+                border-radius: 0.5rem;
+                .leaflet-popup-content {
+                    margin: 0.25rem;
+                    i {
+                        font-size: inherit;
+                        left: 0.5rem;
+                        position: absolute;
+                        &+span {
+                            font-weight: bold;
+                            margin: 0 1.75rem;
+                            &:last-child {
+                                font-style: italic;
+                                font-weight: normal;
+                                line-height: 1;
+                            }
+                        }
+                    }
+                    span {
+                        display: block;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .leaflet-container,
+        .reverse-geo-controls {
+            width: 75vw;
+            @include breakpoint($breakpoint-pair) {
+                width: 95vw;
+            }
+            @include breakpoint(0 $breakpoint-basic) {
+                width: 90vw;
+            }
+        }
+    }
+    form {
+        padding: $font_size;
+        >.field {
+            text-align: center;
+        }
+    }
+    [type="button"].submit,
+    [type="reset"],
+    [type="submit"],
+    a.submit,
+    button.submit {
+        @include button-transform;
+        border-radius: 0.25rem;
+        display: inline-block; /* needed for anchors */
+        padding: 0.5rem 0.75rem;
+        position: relative;
+    }
+    .field {
+        &_control {
+            margin-bottom: $font_size;
+            position: relative;
+            &-is-active {
+                .field_label {
+                    font-weight: bold;
+                }
+            }
+            &-is-active,
+            &-is-filled {
+                .field_label {
+                    @include label-active();
+                }
+            }
+            &-is-active:after {
+                transform: scaleX(100);
+            }
+            &_raw {
+                @include flex-center-row;
+                margin-bottom: $font_size;
+                [type="checkbox"] { // @see https://codepen.io/jcgilmore2/pen/PZpmaK
+                    &:checked+label:before {
+                        content: 'check_box';
+                    }
+                    &+label:before {
+                        content: 'check_box_outline_blank';
+                    }
+                }
+                [type="radio"] {
+                    &:checked+label:before {
+                        content: 'radio_button_checked';
+                    }
+                    &+label:before {
+                        content: 'radio_button_unchecked';
+                    }
+                }
+                [type="checkbox"],
+                [type="radio"] {
+                    display: none;
+                    &+label {
+                        margin-left: 1.65rem;
+                        position: relative;
+                        &:before {
+                            font-family: 'Material Icons';
+                            font-size: 1.25rem;
+                            left: -1.65rem;
+                            position: absolute;
+                            top: -0.15rem;
+                        }
+                    }
+                    &[disabled]+label:before {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            &:after {
+                bottom: 0;
+                content: '';
+                display: block;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                width: 1%;
+            }
+            &.places {
+                margin-bottom: 0;
+                width: 50vw;
+                z-index: 1;
+                @include breakpoint($breakpoint-pair) {
+                    width: 75vw;
+                }
+                @include breakpoint(0 $breakpoint-basic) {
+                    width: 95vw;
+                }/*
+                .algolia-places-nostyle {
+                    width: 100%;
+                    .ap-nostyle-input-icon {
+                        @include button-flat;
+                        @include button-transform;
+                        padding: 0;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                    }
+                    .ap-nostyle-dropdown-menu {
+                        border-bottom-left-radius: 0.5rem;
+                        border-bottom-right-radius: 0.5rem;
+                        padding: 0.25rem 0 0 0.5rem;
+                        .ap-nostyle-suggestion[role="option"] {
+                            >* {
+                                cursor: pointer;
+                            }
+                            em, svg {
+                                cursor: inherit;
+                            }
+                        }
+                    }
+                }*/
+                .icon-clear,
+                .icon-pin {
+                    cursor: pointer;
+                    position: absolute;
+                }
+                .icon-clear {
+                    right: 0;
+                }
+                .icon-pin {
+                    right: 1rem;
+                }
+            }
+            .field_label {
+                display: block;
+                padding-left: 0.7rem;
+                position: absolute;
+                z-index: 1;
+            }
+        }
+        &_errors {
+            @include flex-center-column;
+        }
+        &_input {
+            &[type="date"],
+            &[type="datetime-local"],
+            &[type="email"],
+            &[type="file"],
+            &[type="image"],
+            &[type="month"],
+            &[type="number"],
+            &[type="password"],
+            &[type="range"],
+            &[type="search"],
+            &[type="tel"],
+            &[type="text"],
+            &[type="time"],
+            &[type="url"],
+            &[type="week"] {
+                @include content-field-input;
+                margin-top: calc(1rem + .25vw);
+                padding: 0 0.7rem 0.15rem 0.7rem;
+            }
+        }/*
+        .algolia-places-nostyle {
+            display: unset !important;
+            position: unset !important;
+        }*/
+        &_errors,
+        //.algolia-places-nostyle,
+        textarea.field_input {
+            margin-top: calc(1rem + .25vw);
+        }/*
+        .algolia-places-nostyle .ap-nostyle-input {
+            padding-right: 1.25rem;
+        }
+        .algolia-places-nostyle .ap-nostyle-input,*/
+        textarea.field_input {
+            @include content-field-input;
+        }
+        textarea.field_input {
+            height: 7rem;
+            padding: 0 0.7rem 0.15rem 0.7rem;
+            resize: none;
+        }
+    }
+    .map { // @see https://stackoverflow.com/a/17537609
+        @include flex-center-row;
+        border-radius: 0.5rem;
+        margin-bottom: $font_size;
+        overflow-y: scroll;
+        position: relative;
+        width: 100%;
+    }
+    .map-field {
+        display: none;
+    }
+    .map-overlay {
+        position: absolute;
+        bottom: 0;
+        pointer-events: none;
+    }
+    .reverse-geo-controls {
+        @include flex-center-row;
+        .field_control {
+            background: rgba(0,0,0,0.1);
+            margin-bottom: 0;
+            margin-top: $font_size;
+            z-index: 1;
+            .field {
+                &_input {
+                    margin-top: 0;
+                    max-width: 5.9rem;
+                    pointer-events: initial;
+                }
+            }
+        }
+    }
+}
+
+@mixin content-field-input {
+    display: block;
+    outline: none;
+    width: 100%;
+}

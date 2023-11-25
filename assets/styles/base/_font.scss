@@ -1,0 +1,21 @@
+
+$font_family: Inter, Helvetica, Verdana, Geneva, sans-serif;
+
+$font_family_variation: "Inter var experimental", Helvetica, Verdana, Geneva, sans-serif;
+
+$font_size: calc(1rem + .1vw);
+
+:root, * {
+    cursor: default;
+    font-family: $font_family;
+    font-size: $font_size;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+@supports (font-variation-settings: normal) {
+    :root, * {
+        font-family: $font_family_variation;
+        font-size: $font_size;
+    }
+}

@@ -182,7 +182,6 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
-
 #############
 ## Python
 #############
@@ -216,3 +215,18 @@ pip-log.txt
 
 # Virtual environments
 .env
+
+# JetBrains
+.idea
+
+# pythonloc
+__pycache__
+__pypackages__
+
+# project
+alchemydumps-backup
+node_modules
+public
+static
+translations/messages.pot
+assets/.parcel-cache

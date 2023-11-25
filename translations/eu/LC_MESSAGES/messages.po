@@ -1,0 +1,299 @@
+
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-09-13 19:15+0200\n"
+"PO-Revision-Date: 2020-11-17 17:15+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: eu\n"
+"Language-Team: eu <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: public/__404.html:1
+msgid "Error 404"
+msgstr "404 errorea"
+
+#: public/__500.html:1
+msgid "Error 500"
+msgstr "500 errorea"
+
+#: public/__auth.html:1
+msgid "Auth & Sign"
+msgstr "Autentifikatu eta hasi saioa"
+
+#: public/__auth.html:1
+msgid "Error"
+msgstr "Errorea"
+
+#: public/__auth.html:1
+msgid "Welcome"
+msgstr "Ongi etorri"
+
+#: public/__auth.html:1
+msgid "Set password"
+msgstr "Ezarri pasahitza"
+
+#: public/__auth.html:1
+msgid "Welcome back"
+msgstr "Ongi etorri"
+
+#: public/__home.html:1
+msgid "Home"
+msgstr "Hasiera"
+
+#: public/__place.html:1
+msgid "Where are you going?"
+msgstr "Nora zoaz?"
+
+#: public/__place.html:1
+msgid "You denied the request for Geolocation."
+msgstr "Ukatu egin duzu Geolokalizazio eskaera."
+
+#: public/__place.html:1
+msgid "High tide"
+msgstr "Itsasgora"
+
+#: public/__place.html:1
+msgid "Low tide"
+msgstr "Itsasbehera"
+
+#: public/__place.html:1
+msgid "Close menu"
+msgstr "Itxi menua"
+
+#: public/__place.html:1 public/security/_menu.html:5
+msgid "Open menu"
+msgstr "Ireki menua"
+
+#: public/__place.html:1
+msgid "Show city map"
+msgstr "Ikusi hirien mapa"
+
+#: public/__place.html:1
+msgid "Show initial map"
+msgstr "Ikusi hasierako mapa"
+
+#: public/__place.html:1
+msgid "Show location map"
+msgstr "Erakutsi kokapen mapa"
+
+#: public/__place.html:1
+msgid "Moon phase"
+msgstr "Ilargi fasea"
+
+#: public/__place.html:1
+msgid "Moonrise"
+msgstr "Ilargi irtetzea"
+
+#: public/__place.html:1
+msgid "Moonset"
+msgstr "Ilargi sartzea"
+
+#: public/__place.html:1
+msgid "We do not have this data yet, please try again later."
+msgstr "Datu hauek ez ditugu oraindik, saiatu berriro geroago."
+
+#: public/__place.html:1
+msgid "Geolocation is unavailable."
+msgstr "Geolokalizazioa ez dago erabilgarri."
+
+#: public/__place.html:1
+msgid "Locating..."
+msgstr "Aurkitzen..."
+
+#: public/__place.html:1
+msgid "Sunrise"
+msgstr "Egunsentia"
+
+#: public/__place.html:1
+msgid "Sunset"
+msgstr "Ilunabarra"
+
+#: public/__place.html:1
+msgid "The request to get user location timed out."
+msgstr "Erabiltzailearen kokapena lortzeko eskaera agortu egin da."
+
+#: public/__place.html:1
+msgid "Location information is unavailable."
+msgstr "Kokapen informazioa ez dago erabilgarri."
+
+#: public/__place.html:1
+msgid "An unknown error occurred."
+msgstr "Errore ezezaguna gertatu da."
+
+#: public/__place.html:1
+msgid "Visibility"
+msgstr "Ikusgarritasuna"
+
+#: public/__place.html:1
+msgid "Wave height"
+msgstr "Olatuen altuera"
+
+#: public/__place.html:1
+msgid "Water temperature"
+msgstr "Uraren tenperatura"
+
+#: public/__support.html:1 public/security/_menu.html:39
+msgid "Support"
+msgstr "Laguntza"
+
+#: public/layout.html:7
+msgid ""
+"Information on the weather and climate in the Basque Country: weather "
+"forecast, sea conditions, warnings and alerts, maps"
+msgstr ""
+"Euskal Herriko eguraldiari eta klimari buruzko informazioa: eguraldiaren "
+"iragarpena, itsas baldintzak, abisuak eta alertak, mapak"
+
+#: public/layout.html:8
+msgid "weather, climate, forecast, sea condition, Basque Country"
+msgstr "eguraldia, klima, iragarpena, itsasoaren egoera, Euskal Herria"
+
+#: public/layout.html:23
+msgid "Invert colors"
+msgstr "Alderantzikatu koloreak"
+
+#: public/layout.html:24
+msgid "Fork me on GitHub ❤"
+msgstr "Adarka nazazu GitHub-en ❤"
+
+#: public/partial/_map.html:5 public/partial/_map.html:7
+msgid "Latitude"
+msgstr "Latitudea"
+
+#: public/partial/_map.html:11 public/partial/_map.html:13
+msgid "Longitude"
+msgstr "Longitudea"
+
+#: public/partial/_map.html:19 public/partial/_map.html:21
+msgid "Place, Postcode"
+msgstr "Lekua, posta kodea"
+
+#: public/partial/_map.html:25 public/partial/_map.html:27
+msgid "Suburb, City"
+msgstr "Auzoa, hiria"
+
+#: public/partial/_map.html:31 public/partial/_map.html:33
+msgid "County, Region, Country"
+msgstr "Konderria, eskualdea, herrialdea"
+
+#: public/security/_menu.html:20 public/security/login_user.html:5
+#: public/security/login_user.html:11
+msgid "Sign in"
+msgstr "Hasi saioa"
+
+#: public/security/_menu.html:30 public/security/register_user.html:5
+#: public/security/register_user.html:13
+msgid "Sign up"
+msgstr "Izena eman"
+
+#: public/security/register_user.html:15
+msgid "or"
+msgstr "edo"
+
+#: public/security/register_user.html:17
+msgid "Sign up with Google"
+msgstr "Eman izena Googlerekin"
+
+#: public/security/register_user.html:27
+msgid "Sign up with Twitter"
+msgstr "Eman izena Twitterrekin"
+
+#: src/controller/main.py:68
+#, python-format
+msgid "\"%s\" language is not supported."
+msgstr "\"%s\" hizkuntza ez da onartzen."
+
+#: src/controller/main.py:79
+#, python-format
+msgid "Enjoy %s ッ"
+msgstr "Gozatu %s ッ"
+
+#: src/controller/main.py:96
+msgid "Enjoy daylight ッ"
+msgstr "Gozatu eguneko argia ッ"
+
+#: src/controller/main.py:96
+msgid "Enjoy nightlight ッ"
+msgstr "Gozatu gaueko argia ッ"
+
+#: src/controller/main.py:117
+msgid "Werkzeug server is not running."
+msgstr "Werkzeug zerbitzaria ez dago martxan."
+
+#: src/controller/main.py:121
+msgid "Server shutting down..."
+msgstr "Zerbitzaria itzaltzen ..."
+
+#: src/controller/main.py:130
+msgid "Text is mandatory."
+msgstr "Testua derrigorrezkoa da."
+
+#: src/controller/main.py:165
+msgid "Date is mandatory."
+msgstr "Data derrigorrezkoa da."
+
+#: src/controller/main.py:183
+msgid "Time is mandatory."
+msgstr "Denbora derrigorrezkoa da."
+
+#: src/form/support.py:13
+msgid "Name"
+msgstr "Izena"
+
+#: src/form/support.py:14
+msgid "Email Address"
+msgstr "Posta elektronikoa"
+
+#: src/form/support.py:15
+msgid "Message"
+msgstr "Mezua"
+
+#: src/form/support.py:17
+msgid "Send"
+msgstr "Bidali"
+
+#: src/util/main.py:109
+#, python-format
+msgid "Error: %s"
+msgstr "Errorea: %s"
+
+#: src/util/main.py:116
+#, python-format
+msgid "Bad request: %s"
+msgstr "Eskari txarra: %s"
+
+#: src/util/main.py:122
+#, python-format
+msgid "Unhandled exception: %s"
+msgstr "Kudeatu gabeko salbuespena: %s"
+
+#: src/view/support.py:28
+#, python-format
+msgid "Message from %s"
+msgstr "%s-ren mezua"
+
+#: src/view/support.py:30
+msgid "Your message has been sent. Thank you!"
+msgstr "Zure mezua bidali da. Eskerrik asko!"
+
+#~ msgid "You are logged in with Facebook"
+#~ msgstr "Facebook-ekin saioa hasi duzu"
+
+#~ msgid "Your 5 most recent statuses"
+#~ msgstr "Zure azken 5 egoerak"
+
+#~ msgid "Posted on"
+#~ msgstr "Argitaratua"
+
+#~ msgid "You are logged in with Twitter"
+#~ msgstr "Twitterrekin saioa hasi duzu"
+
+#~ msgid "Your 5 most recent tweets"
+#~ msgstr "Zure azken 5 txioak"
+

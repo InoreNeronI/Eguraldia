@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block styles %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="../styles/main.sass" rel="stylesheet">
+{% endblock %}
+
+{% block header %}
+    <i class="logo material-icons">{% if theme == 'dark' %}nights_stay{% elif
+            theme == 'light' %}wb_sunny{% else %}offline_bolt{% endif %}</i>
+    <section class="slider">
+        <div class="slider-container">
+            <h1 class="slider-item"><a href="/" title="{{ _('Home') }}">{{ title }}</a></h1>
+            <h1 class="slider-item"></h1>
+            <h1 class="slider-item"></h1>
+            <h1 class="slider-item"></h1>
+            <h1 class="slider-item"></h1>
+            <h1 class="slider-item"></h1>
+        </div>
+    </section>
+    {% include 'security/_menu.html' %}
+{% endblock %}
+
+{% block content %}<article class="main"></article>{% endblock %}
+
+{% block footer %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        <div class="messages">
+            {% if messages %}
+                {% for category, message in messages %}
+                    <span class="{{category}}">{{ message }}</span>
+                {% endfor %}{# @see https://stackoverflow.com/q/19152471
+            {% elif form and form.errors %}
+                {% for error in form.errors %}
+                    <span class="error">{{ form[error].label }} {{ form.errors[error][0] }}</span>
+                {% endfor %}#}
+            {% else %}
+                <a href="/" title="{{ _('Home') }}"><span class="info">{{ title }}</span></a>
+            {% endif %}
+        </div>
+    {% endwith %}
+{% endblock %}
+
+{% block scripts %}<script defer src="../scripts/pages/home.js" type="module"></script>{% endblock %}

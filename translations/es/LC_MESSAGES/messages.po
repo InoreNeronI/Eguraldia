@@ -1,0 +1,305 @@
+# Spanish translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-09-13 19:15+0200\n"
+"PO-Revision-Date: 2020-11-17 17:15+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: public/__404.html:1
+msgid "Error 404"
+msgstr "Error 404"
+
+#: public/__500.html:1
+msgid "Error 500"
+msgstr "Error 500"
+
+#: public/__auth.html:1
+msgid "Auth & Sign"
+msgstr "Autenticación e inicio de sesión"
+
+#: public/__auth.html:1
+msgid "Error"
+msgstr "Error"
+
+#: public/__auth.html:1
+msgid "Welcome"
+msgstr "Bienvenido/a"
+
+#: public/__auth.html:1
+msgid "Set password"
+msgstr "Establecer contraseña"
+
+#: public/__auth.html:1
+msgid "Welcome back"
+msgstr "Bienvenido/a de nuevo"
+
+#: public/__home.html:1
+msgid "Home"
+msgstr "Inicio"
+
+#: public/__place.html:1
+msgid "Where are you going?"
+msgstr "¿A dónde vas?"
+
+#: public/__place.html:1
+msgid "You denied the request for Geolocation."
+msgstr "Rechazó la solicitud de geolocalización."
+
+#: public/__place.html:1
+msgid "High tide"
+msgstr "Marea alta"
+
+#: public/__place.html:1
+msgid "Low tide"
+msgstr "Marea baja"
+
+#: public/__place.html:1
+msgid "Close menu"
+msgstr "Cerrar menú"
+
+#: public/__place.html:1 public/security/_menu.html:5
+msgid "Open menu"
+msgstr "Abrir menú"
+
+#: public/__place.html:1
+msgid "Show city map"
+msgstr "Ver el mapa de ciudades"
+
+#: public/__place.html:1
+msgid "Show initial map"
+msgstr "Ver el mapa inicial"
+
+#: public/__place.html:1
+msgid "Show location map"
+msgstr "Mostrar el mapa de ubicación"
+
+#: public/__place.html:1
+msgid "Moon phase"
+msgstr "Fase lunar"
+
+#: public/__place.html:1
+msgid "Moonrise"
+msgstr "Salida de la luna"
+
+#: public/__place.html:1
+msgid "Moonset"
+msgstr "Puesta de la luna"
+
+#: public/__place.html:1
+msgid "We do not have this data yet, please try again later."
+msgstr "Todavia no disponemos de estos datos, pruebe de nuevo mas tarde."
+
+#: public/__place.html:1
+msgid "Geolocation is unavailable."
+msgstr "La geolocalización no está disponible."
+
+#: public/__place.html:1
+msgid "Locating..."
+msgstr "Localizando..."
+
+#: public/__place.html:1
+msgid "Sunrise"
+msgstr "Amanecer"
+
+#: public/__place.html:1
+msgid "Sunset"
+msgstr "Puesta de sol"
+
+#: public/__place.html:1
+msgid "The request to get user location timed out."
+msgstr ""
+"Se agotó el tiempo de espera de la solicitud para obtener la ubicación "
+"del usuario."
+
+#: public/__place.html:1
+msgid "Location information is unavailable."
+msgstr "La información de ubicación no está disponible."
+
+#: public/__place.html:1
+msgid "An unknown error occurred."
+msgstr "Un error desconocido ocurrió."
+
+#: public/__place.html:1
+msgid "Visibility"
+msgstr "Visibilidad"
+
+#: public/__place.html:1
+msgid "Wave height"
+msgstr "Altura de las olas"
+
+#: public/__place.html:1
+msgid "Water temperature"
+msgstr "Temperatura del agua"
+
+#: public/__support.html:1 public/security/_menu.html:39
+msgid "Support"
+msgstr "Apoyo"
+
+#: public/layout.html:7
+msgid ""
+"Information on the weather and climate in the Basque Country: weather "
+"forecast, sea conditions, warnings and alerts, maps"
+msgstr ""
+"Información meteorológica y climática de Euskadi: previsión "
+"meteorológica, estado del mar, avisos y alertas, mapas"
+
+#: public/layout.html:8
+msgid "weather, climate, forecast, sea condition, Basque Country"
+msgstr "tiempo, clima, pronóstico, estado del mar, País Vasco"
+
+#: public/layout.html:23
+msgid "Invert colors"
+msgstr "Invertir colores"
+
+#: public/layout.html:24
+msgid "Fork me on GitHub ❤"
+msgstr "Bifurcame en GitHub ❤"
+
+#: public/partial/_map.html:5 public/partial/_map.html:7
+msgid "Latitude"
+msgstr "Latitud"
+
+#: public/partial/_map.html:11 public/partial/_map.html:13
+msgid "Longitude"
+msgstr "Longitud"
+
+#: public/partial/_map.html:19 public/partial/_map.html:21
+msgid "Place, Postcode"
+msgstr "Lugar, código postal"
+
+#: public/partial/_map.html:25 public/partial/_map.html:27
+msgid "Suburb, City"
+msgstr "Suburbio, ciudad"
+
+#: public/partial/_map.html:31 public/partial/_map.html:33
+msgid "County, Region, Country"
+msgstr "Condado, región, país"
+
+#: public/security/_menu.html:20 public/security/login_user.html:5
+#: public/security/login_user.html:11
+msgid "Sign in"
+msgstr "Iniciar sesión"
+
+#: public/security/_menu.html:30 public/security/register_user.html:5
+#: public/security/register_user.html:13
+msgid "Sign up"
+msgstr "Inscribirse"
+
+#: public/security/register_user.html:15
+msgid "or"
+msgstr "o"
+
+#: public/security/register_user.html:17
+msgid "Sign up with Google"
+msgstr "Regístrese con Google"
+
+#: public/security/register_user.html:27
+msgid "Sign up with Twitter"
+msgstr "Regístrese con Twitter"
+
+#: src/controller/main.py:68
+#, python-format
+msgid "\"%s\" language is not supported."
+msgstr "El idioma \"%s\" no es compatible."
+
+#: src/controller/main.py:79
+#, python-format
+msgid "Enjoy %s ッ"
+msgstr "Disfruta el %s ッ"
+
+#: src/controller/main.py:96
+msgid "Enjoy daylight ッ"
+msgstr "Disfruta de la luz del día ッ"
+
+#: src/controller/main.py:96
+msgid "Enjoy nightlight ッ"
+msgstr "Disfruta de la luz nocturna ッ"
+
+#: src/controller/main.py:117
+msgid "Werkzeug server is not running."
+msgstr "El servidor Werkzeug no se está ejecutando."
+
+#: src/controller/main.py:121
+msgid "Server shutting down..."
+msgstr "Servidor apagándose..."
+
+#: src/controller/main.py:130
+msgid "Text is mandatory."
+msgstr "El texto es obligatorio."
+
+#: src/controller/main.py:165
+msgid "Date is mandatory."
+msgstr "La fecha es obligatoria."
+
+#: src/controller/main.py:183
+msgid "Time is mandatory."
+msgstr "El tiempo es obligatorio."
+
+#: src/form/support.py:13
+msgid "Name"
+msgstr "Nombre"
+
+#: src/form/support.py:14
+msgid "Email Address"
+msgstr "Correo electrónico"
+
+#: src/form/support.py:15
+msgid "Message"
+msgstr "Mensaje"
+
+#: src/form/support.py:17
+msgid "Send"
+msgstr "Enviar"
+
+#: src/util/main.py:109
+#, python-format
+msgid "Error: %s"
+msgstr "Error: %s"
+
+#: src/util/main.py:116
+#, python-format
+msgid "Bad request: %s"
+msgstr "Solicitud incorrecta: %s"
+
+#: src/util/main.py:122
+#, python-format
+msgid "Unhandled exception: %s"
+msgstr "Excepción no controlada: %s"
+
+#: src/view/support.py:28
+#, python-format
+msgid "Message from %s"
+msgstr "Mensaje de %s"
+
+#: src/view/support.py:30
+msgid "Your message has been sent. Thank you!"
+msgstr "Tu mensaje ha sido enviado. ¡Gracias!"
+
+#~ msgid "You are logged in with Facebook"
+#~ msgstr "Estás conectado con Facebook"
+
+#~ msgid "Your 5 most recent statuses"
+#~ msgstr "Tus 5 estados más recientes"
+
+#~ msgid "Posted on"
+#~ msgstr "Publicado en"
+
+#~ msgid "You are logged in with Twitter"
+#~ msgstr "Estás conectado con Twitter"
+
+#~ msgid "Your 5 most recent tweets"
+#~ msgstr "Tus 5 tweets más recientes"
+

@@ -1,0 +1,29 @@
+
+{% macro render_field(field, class='field_input') %}
+    <div class="field">
+        {{ field(class=class, **kwargs)|safe }}
+    </div>
+{% endmacro %}
+
+{% macro render_field_errors(field) %}
+    {% if field.errors %}
+        <div class="field_errors messages">
+            {% for error in field.errors %}
+                <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}
+
+{% macro render_field_with_errors(field, class='field_control') %}
+    {{ render_field_errors(field) }}
+    <div class="{{ class }}">
+        {% if class == 'field_control' %}
+            {{ field.label(class="field_label") }}
+            {{ render_field(field, **kwargs) }}
+        {% elif class == 'field_control_raw' %}
+            {{ field(class='field_input', **kwargs)|safe }}
+            {{ field.label(class="field_label") }}
+        {% endif %}
+    </div>
+{% endmacro %}

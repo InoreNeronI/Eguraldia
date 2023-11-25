@@ -1,0 +1,17 @@
+# Everything needed in production
+
+authomatic==1.2.1
+bcrypt==4.0.1
+bleach==6.1.0
+git+https://github.com/InoreNeronI/alchemydumps@main#flask-alchemydumps
+flask-babel==4.0.0
+flask-mail==0.9.1
+flask-migrate==4.0.5
+flask-security-too==5.3.2
+pandas==2.1.3
+psycopg2-binary==2.9.9
+pycountry==22.3.5
+pyside6==6.6.0
+python-dotenv==1.0.0
+requests==2.31.0
+simhash==2.1.2

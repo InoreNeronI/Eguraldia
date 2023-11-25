@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>{# Specific page language goes here #}
+<html lang="{{ language }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="{{ _('Information on the weather and climate in the Basque Country: weather forecast, sea conditions, warnings and alerts, maps') }}">
+        <meta name="keywords" content="{{ _('weather, climate, forecast, sea condition, Basque Country') }}">{# Specific page icon goes here #}
+        <link href="{{ icon }}" rel="icon" sizes="any" type="{{ icon_type }}">{# Specific page title goes here #}
+        <title>{% block title %}{{ title }}{% endblock %}</title>{# Specific font css goes here #}
+        <link href="https://rsms.me/inter/inter.css" rel="stylesheet">{# Specific page CSS goes here #}
+        {% block styles %}{% endblock %}
+    </head>
+    <body class="{{ theme }}">
+        <div class="wrap">{# Specific page header goes here #}
+            <header>{% block header %}{% endblock %}</header>{# Specific page content goes here #}
+            <section>{% block content %}{% endblock %}</section>{# Specific page footer goes here #}
+            <footer>
+                {#<form>
+                    <input name="t" type="hidden" value="{{ theme }}" />
+                    <input class="material-icons" title="{{ _('Invert colors') }}" type="submit" value="invert_colors" />
+                </form>#}
+                <div class="button"><a class="material-icons" href="{{ get_query(t=theme) }}" title="{{ _('Invert colors') }}">invert_colors</a></div>
+                <div class="button"><a class="material-icons" href="https://github.com/InoreNeronI/Eguraldia" target="_blank" title="{{ _('Fork me on GitHub ❤') }}">github</a></div>
+                <div class="footer">{% block footer %}{% endblock %}</div>{#
+                <form action="/shutdown" method="post">
+                    <input class="material-icons" title="{{ _('Shutdown server') }}" type="submit" value="power_settings_new" />
+                </form>#}
+                <section class="languages">
+                    <div class="lang"><i class="material-icons">translate</i></div>
+                    {% for key, value in languages.items() %}
+                        {% if key == language %}
+                            <div class="lang">{{ key }}</div>
+                        {% else %}
+                            <div class="button lang"><a href="{{ get_query(l=key) }}" title="{{ value }}">{{ key }}</a></div>
+                        {% endif %}
+                    {% endfor %}
+                </section>
+            </footer>
+        </div>{# Specific page JS goes here #}
+        {% block scripts %}{% endblock %}
+    </body>
+</html>

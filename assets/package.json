@@ -1,0 +1,51 @@
+{
+    "name": "eguraldia",
+    "version": "1.0.0",
+    "description": "Python module that allows you to convert Flask apps into cross platform desktop apps",
+    "repository": "https://github.com/InoreNeronI/Eguraldia.git",
+    "license": "MIT",
+    "private": true,
+    "scripts": {
+        "build": "cross-env NODE_ENV=production parcel build 'templates/**/__*.html' --dist-dir ../public --no-source-maps --public-url public",
+        "postbuild": "find ../public -name __*.html -exec sed -i 's/public\\///g' {} + && cp -nrv templates/* ../public",
+        "prebuild": "rm -fr .parcel-cache ../public",
+        "prestart": "npm run prebuild && mkdir ../public  && npm run postbuild",
+        "start": "cross-env NODE_ENV=development parcel serve 'templates/**/__*.html' --dist-dir ../public --no-autoinstall --no-source-maps --public-url public"
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-decorators": "^7.23.3",
+        "@babel/plugin-proposal-export-default-from": "^7.23.3",
+        "@babel/plugin-transform-runtime": "^7.23.4",
+        "@babel/preset-env": "^7.23.3",
+        "@parcel/transformer-sass": "^2.10.3",
+        "breakpoint-sass": "^3.0.0",
+        "cross-env": "^7.0.3",
+        "parcel": "^2.10.3",
+        "process": "^0.11.10",
+        "sass": "^1.69.5"
+    },
+    "dependencies": {
+        "@placekit/autocomplete-js": "^2.1.5",
+        "@placekit/client-js": "^2.2.0",
+        "breakpoint-sass": "^3.0.0",
+        "leaflet": "^1.9.4",
+        "leaflet-canvasicon": "^0.1.6",
+        "leaflet-iconmaterial": "^1.1.0"
+    },
+    "alias": {
+        "leaflet": {
+            "global": "L"
+        },
+        "@placekit/autocomplete-js": {
+            "global": "placekitAutocomplete"
+        },
+        "@placekit/client-js": {
+            "global": "placekit"
+        }
+    },
+    "targets": {
+        "default": {
+            "context": "browser"
+        }
+    }
+}

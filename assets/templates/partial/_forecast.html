@@ -1,0 +1,7 @@
+<div class="forecast">
+    <div class="forecast-arrows">
+        <a href="{{ url_for(request.endpoint, d=days.before) }}" title="{{ days.before }}"><i class="material-icons">arrow_back_ios</i></a>
+        <span>{{ days.now }}</span>
+        <a href="{{ url_for(request.endpoint, d=days.after) }}" title="{{ days.after }}"><i class="material-icons">arrow_forward_ios</i></a>
+    </div>
+</div>

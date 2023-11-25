@@ -1,0 +1,119 @@
+
+@mixin menu($animation-duration) {
+    .menu-wrapper {
+        height: 100%;
+        margin-top: 2px;
+        text-align: right;
+        transition: all $animation-duration ease-in-out;
+        .m-h {
+            @include button-transform;
+            height: inherit;
+            &_icon {
+                @include button-flat;
+                height: inherit;
+                outline: 0;
+                padding: 0 0.5rem;
+                &-from-arrow {
+                    animation-name: slide-from;
+                    &:before {
+                        animation-name: slide-before-from;
+                    }
+                }
+                &-to-arrow {
+                    animation-name: slide-to;
+                    animation-fill-mode: forwards;
+                    &:before {
+                        animation-name: slide-before-to;
+                        animation-fill-mode: forwards;
+                        content: 'menu_open' !important;
+                    }
+                }
+            }
+            &_layer {
+                animation-duration: $animation-duration;
+                animation-timing-function: ease-in-out;
+                cursor: inherit;
+                display: block;
+                height: inherit;
+                &:before {
+                    animation-duration: inherit;
+                    animation-timing-function: inherit;
+                    font-size: 7.25vh;
+                    content: 'menu';
+                }
+            }
+        }
+        .menu {
+            border-bottom-left-radius: 0.5rem;
+            z-index: 1;
+            &-off {
+                display: block;
+                right: -50%;
+                position: absolute;
+                transition: all $animation-duration;
+            }
+            &-on {
+                right: 0;
+                transition: all $animation-duration;
+            }
+            div {
+                @include flex-end-row;
+                margin: 0.75rem;
+                padding-bottom: 0.75rem;
+                &:last-child {
+                    border-bottom: none !important;
+                    padding-bottom: 0;
+                }
+                * {
+                    margin: 0;
+                }
+                a {
+                    color: inherit;
+                    margin-right: 1.5rem;
+                    text-decoration: none;
+                }
+                a,
+                p {
+                    width: 100%;
+                }
+                i {
+                    cursor: pointer;
+                    padding-left: 0.25rem;
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+@keyframes slide-to {
+    0% {
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes slide-before-to {
+    0% {
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes slide-from {
+    0% {
+        transform: rotate(-180deg);
+    }
+    100% {
+    }
+}
+
+@keyframes slide-before-from {
+    0% {
+        transform: rotate(45deg);
+    }
+    100% {
+    }
+}

@@ -1,0 +1,72 @@
+
+@import '../skin/body-element';
+@import '../skin/fields';
+
+// @see https://css-tricks.com/approaches-media-queries-sass
+$breakpoint-basic: 400px;
+$breakpoint-tablet: 768px;
+$breakpoint-pair: $breakpoint-basic $breakpoint-tablet;
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    line-height: 1.15;
+}
+
+body,
+html {
+    height: 100%; /* needed to be able to use 100% height in the columns, @see https://codepen.io/vanslooten/pen/RPRxoQ */
+    min-width: 400px;
+    overflow-x: hidden;
+}
+
+body {
+    @include background-base;
+    margin: 0;
+    height: 100vh;
+
+    .wrap {
+        height: 100%;
+        margin: 0 auto;
+        >header {
+            @include header;
+            height: 7.5%;
+        }
+        >section {
+            @include content;
+            height: 87.5%;
+        }
+        >footer {
+            @include footer;
+            height: 5%;
+        }
+    }
+
+    &.bg-blur {
+        .wrap {
+            >section {
+                opacity: 0.666;
+            }
+        }
+    }
+
+    &.dark {
+        background-image: url("../images/desert-dark.svg");
+        @include body(#a2b9c7, #192432);
+    }
+
+    &.light {
+        background-image: url("../images/desert-light.svg");
+        @include body(#192432, #d9d9d9);
+    }
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+
+}

@@ -1,0 +1,35 @@
+<div class="map">
+    <div id="map"></div>
+    <div class="map-overlay reverse-geo-controls">
+        <div class="field_control">
+            <label class="field_label" for="reverse-geo-lat">{{ _('Latitude') }}</label>
+            <div class="field">
+                <input class="field_input" id="reverse-geo-lat" placeholder="{{ _('Latitude') }}"  type="text"/>
+            </div>
+        </div>
+        <div class="field_control">
+            <label class="field_label" for="reverse-geo-lng">{{ _('Longitude') }}</label>
+            <div class="field">
+                <input class="field_input" id="reverse-geo-lng" placeholder="{{ _('Longitude') }}" type="text" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="field_control map-field">
+    <label class="field_label" for="reverse-address">{{ _('Place, Postcode') }}</label>
+    <div class="field">
+        <input class="field_input" disabled="" id="reverse-address" placeholder="{{ _('Place, Postcode') }}" type="text" />
+    </div>
+</div>
+<div class="field_control map-field">
+    <label class="field_label" for="reverse-town">{{ _('Suburb, City') }}</label>
+    <div class="field">
+        <input class="field_input" disabled="" id="reverse-town" placeholder="{{ _('Suburb, City') }}" type="text" />
+    </div>
+</div>
+<div class="field_control map-field">
+    <label class="field_label" for="reverse-region">{{ _('County, Region, Country') }}</label>
+    <div class="field">
+        <input class="field_input" disabled="" id="reverse-region" placeholder="{{ _('County, Region, Country') }}" type="text" />
+    </div>
+</div>

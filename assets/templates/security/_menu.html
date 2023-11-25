@@ -1,0 +1,49 @@
+
+{% if security.registerable or security.recoverable or security.confirmable or security.unified_signin %}
+    <section class="menu-wrapper">
+        <section class="m-h">
+            <button class="m-h_icon" title="{{ _('Open menu') }}">
+                <i class="m-h_layer material-icons"></i>
+            </button>
+        </section>
+        <section class="menu menu-off">
+            {% if current_user.is_authenticated %}
+                <div><a href="{{ url_for('support') }}">
+                    @{{ current_user.username }}<i class="material-icons">face</i>
+                </a></div>
+                <div><a href="{{ url_for_security('logout') }}">
+                    {{ _fsdomain('Logout') }}<i class="material-icons">exit_to_app</i>
+                </a></div>
+            {% else %}
+                {% if not skip_login_menu %}
+                    <div><a href="{{ url_for_security('login') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">
+                        {{ _('Sign in') }}<i class="material-icons">login</i>
+                    </a></div>
+                {% endif %}
+                {% if security.unified_signin and not skip_login_menu %}
+                    <div><a href="{{ url_for_security('us_signin') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">
+                        {{ _fsdomain('Unified Sign In') }}<i class="material-icons">login</i>
+                    </a></div>
+                {% endif %}
+                {% if security.registerable %}
+                    <div><a href="{{ url_for_security('register') }}{% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}">
+                        {{ _('Sign up') }}<i class="material-icons">how_to_reg</i>
+                    </a></div>
+                {% endif %}
+                {% if security.recoverable %}
+                    <div><a href="{{ url_for_security('forgot_password') }}">
+                        {{ _fsdomain('Forgot password') }}<i class="material-icons">enhanced_encryption</i>
+                    </a></div>
+                {% endif %}
+                <div><a href="{{ url_for('support') }}">
+                    {{ _('Support') }}<i class="material-icons">send</i>
+                </a></div>
+            {% endif %}
+            {% if security.confirmable %}
+                <div><a href="{{ url_for_security('send_confirmation') }}">
+                    {{ _fsdomain('Confirm account') }}<i class="material-icons">check</i>
+                </a></div>
+            {% endif %}
+        </section>
+    </section>
+{% endif %}
